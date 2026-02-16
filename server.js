@@ -153,14 +153,16 @@ const insertDB = new Database({
     host: process.env.DB_HOST,
     user: process.env.DB_INSERT_USER,
     password: process.env.DB_INSERT_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    ssl: { rejectUnauthorized: true }
 });
 
 const readDB = new Database({
     host: process.env.DB_HOST,
     user: process.env.DB_READ_USER,
     password: process.env.DB_READ_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    ssl: { rejectUnauthorized: true }
 });
 
 Promise.all([
